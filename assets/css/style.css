@@ -102,6 +102,9 @@ body {
 
 /* responsive */
 @media (max-width: 980px){
+    .header img:hover {
+        transform: none;
+    }
     .cursor {
         display: none;
     }
