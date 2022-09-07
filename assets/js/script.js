@@ -20,16 +20,3 @@ function trackMovement(e) {
   cursor.style.top = e.pageY + "px";
 }
 
-// image toggle
-$("header div").click(function() {
-
-    let musicButton = $(this).children("img");
-    musicButton.attr("src", function(index, attr){
-      if (attr.match('play')) {
-        return attr.replace("play", "paused");
-      }
-      else {
-        return attr.replace("paused", "play");
-      }
-    });
-  });

@@ -61,5 +61,20 @@
 
     <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script> 
     <script language="JavaScript" type="text/javascript" src="./assets/js/script.js"></script>
+<script>
+    // image toggle
+$("header div").click(function() {
+
+    let musicButton = $(this).children("img");
+    musicButton.attr("src", function(index, attr){
+      if (attr.match('play')) {
+        return attr.replace("play", "paused");
+      }
+      else {
+        return attr.replace("paused", "play");
+      }
+    });
+  });
+</script>
 </body>
 </html>
