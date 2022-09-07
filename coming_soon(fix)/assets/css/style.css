@@ -1,0 +1,131 @@
+body {
+    cursor: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* layout */
+#wrap{
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "bg bg"
+    "bg bg"
+    "footer footer";
+    grid-template-rows: 10% 40% 40% 10%;
+    grid-template-columns: repeat(2, 50%);
+
+    overflow: hidden;
+    height: 100vh;
+    box-sizing: border-box;
+    border-top: 0;
+    background: #354234;
+}
+
+/* header */
+.header {
+    grid-area: header;
+    text-align: right;
+}
+.header div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.header img {
+    width: 60px;
+    transition: all 0.5s ease;
+}
+
+.header img:hover {
+    transform: scale(1.2);
+}
+
+/* header audio */
+.header > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    margin-right: 10px;
+}
+
+/* bg */
+.bg {
+    grid-area: bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/banner.png) no-repeat center center;
+    color: #fff;
+    text-transform: uppercase;  
+    font-family: 'Choco Cheese', sans-serif;
+    letter-spacing: 0.2rem;
+}
+.bg p {
+    text-shadow: 0px 6px 0 gray;
+    animation: text-ani 1s infinite alternate;
+}
+
+  @keyframes text-ani{
+    0%{
+        font-size: 6rem;
+    }
+    100%{
+        font-size: 8rem;
+    }
+  }
+
+/* footer */
+.footer {
+    grid-area: footer;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.footer img {
+    width: 184px;
+}
+
+/* cursor */
+.cursor {
+    width: 50px; 
+    height: 50px;
+    position: absolute; 
+    left: 0; top: 0; 
+    background: url(../img/cursor2.svg);
+    background-size: cover;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+   }
+
+/* responsive */
+@media (max-width: 980px){
+    .cursor {
+        display: none;
+    }
+    .bg p {
+        display: block;
+        text-align: center;
+    }
+    @keyframes text-ani{
+        0%{
+            font-size: 4rem;
+        }
+        100%{
+            font-size: 6rem;
+        }
+      }    
+}
+
+@media (max-width: 480px){
+    @keyframes text-ani{
+        0%{
+            font-size: 1rem;
+        }
+        100%{
+            font-size: 3rem;
+        }
+      }
+}
